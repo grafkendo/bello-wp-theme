@@ -4,7 +4,7 @@ Theme URI: https://bellolist.com/
 Description: Bello child theme for Astra. Navy/orange brand system, Sora display + Inter body, job-ticket visual world.
 Author: Bello
 Template: astra
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: bello
 */
 
@@ -336,3 +336,22 @@ ul.bello-promise b { color: var(--bello-navy); }
 @media (min-width: 760px) {
   .bello-band { padding: 48px; }
 }
+
+/* ============ Homepage fixes v1.0.2 ============ */
+/* Ticket header: keep label + location on one line even if the parent theme fights the flex */
+.wp-block-group.bello-ticket-head {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.wp-block-group.bello-ticket-head > * { margin: 0 !important; }
+
+/* Kill stray paragraph backgrounds inside the ticket body and pro band */
+.bello-ticket-body p,
+.bello-band p {
+  background: transparent !important;
+}
+
+/* Hide the page title on the static front page */
+.home .entry-title { display: none; }
