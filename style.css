@@ -1,0 +1,338 @@
+/*
+Theme Name: Bello
+Theme URI: https://bellolist.com/
+Description: Bello child theme for Astra. Navy/orange brand system, Sora display + Inter body, job-ticket visual world.
+Author: Bello
+Template: astra
+Version: 1.0.1
+Text Domain: bello
+*/
+
+/* ============ Bello design tokens ============ */
+:root {
+  --bello-navy: #002244;
+  --bello-orange: #FB4F14;
+  --bello-ink: #0A1628;
+  --bello-paper: #FAF6EE;
+  --bello-orange-dark: #D63F0C;
+  /* Astra global palette overrides */
+  --ast-global-color-0: #FB4F14;
+  --ast-global-color-1: #002244;
+  --ast-global-color-2: #0A1628;
+  --ast-global-color-3: #FAF6EE;
+  --ast-global-color-4: #FFFFFF;
+  --ast-global-color-5: #0A1628;
+  --ast-global-color-6: #002244;
+  --ast-global-color-7: #FAF6EE;
+  --ast-global-color-8: #FB4F14;
+}
+
+/* ============ Typography ============ */
+body,
+body p,
+.ast-single-post .entry-content {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--bello-ink);
+  background-color: var(--bello-paper);
+}
+
+h1, h2, h3, h4, h5, h6,
+.entry-title,
+.widget-title {
+  font-family: 'Sora', sans-serif;
+  color: var(--bello-navy);
+  letter-spacing: -0.01em;
+}
+
+/* ============ Links ============ */
+a { color: var(--bello-navy); }
+a:hover, a:focus { color: var(--bello-orange); }
+
+/* ============ Buttons ============ */
+.wp-block-button__link,
+.ast-button,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button,
+.geodir-button,
+a.geodir-button {
+  background-color: var(--bello-orange);
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  padding: 0.75em 1.5em;
+}
+
+.wp-block-button__link:hover,
+.ast-button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+.button:hover,
+.geodir-button:hover {
+  background-color: var(--bello-orange-dark);
+  color: #FFFFFF;
+}
+
+/* Secondary / outline buttons */
+.wp-block-button.is-style-outline .wp-block-button__link {
+  background: transparent;
+  border: 2px solid var(--bello-navy);
+  color: var(--bello-navy);
+}
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+  background: var(--bello-navy);
+  color: #FFFFFF;
+}
+
+/* ============ Header ============ */
+.main-header-bar,
+.site-header,
+#masthead {
+  background-color: var(--bello-navy);
+}
+
+.main-header-bar a,
+.site-header a,
+#masthead a,
+.main-header-menu > li > a {
+  color: #FFFFFF;
+}
+
+.main-header-bar a:hover,
+#masthead a:hover,
+.main-header-menu > li > a:hover,
+.main-header-menu > li.current-menu-item > a {
+  color: var(--bello-orange);
+}
+
+/* ============ Footer ============ */
+.site-footer,
+.footer-adv {
+  background-color: var(--bello-ink);
+  color: #FAF6EE;
+}
+.site-footer a { color: #FAF6EE; }
+.site-footer a:hover { color: var(--bello-orange); }
+.site-footer h1, .site-footer h2, .site-footer h3,
+.site-footer .widget-title { color: #FFFFFF; }
+
+/* ============ GeoDirectory listing cards ============ */
+.geodir-listing-card,
+.geodir-card {
+  border: 1px solid rgba(0, 34, 68, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.geodir-post-title a,
+.geodir-entry-title a {
+  font-family: 'Sora', sans-serif;
+  color: var(--bello-navy);
+}
+
+/* Rating stars in brand orange */
+.geodir-rating,
+.fa-star, .fas.fa-star {
+  color: var(--bello-orange) !important;
+}
+
+/* Badges / featured ribbons */
+.geodir-badge,
+.geodir-featured-badge {
+  background-color: var(--bello-orange);
+  color: #FFFFFF;
+  font-family: 'Sora', sans-serif;
+  border-radius: 6px;
+}
+
+/* ============ Forms ============ */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+textarea,
+select {
+  border: 1px solid rgba(0, 34, 68, 0.25);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--bello-orange);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(251, 79, 20, 0.2);
+}
+
+/* ============ Ticket stub divider (brand motif) ============ */
+.bello-ticket-divider {
+  border-top: 2px dashed rgba(0, 34, 68, 0.3);
+  margin: 2em 0;
+  position: relative;
+}
+
+/* ============ Homepage (matches bellolist.com) ============ */
+.bello-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--bello-orange);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-family: 'Inter', sans-serif;
+}
+.bello-kicker::before {
+  content: "";
+  width: 22px;
+  height: 3px;
+  background: var(--bello-orange);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.bello-sec-no {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--bello-orange);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+/* Job ticket card */
+.bello-ticket {
+  background: #FFFFFF;
+  border: 2px solid var(--bello-navy);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 6px 6px 0 var(--bello-navy);
+  max-width: 560px;
+}
+.bello-ticket-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bello-navy);
+  color: #FFFFFF;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  font-family: 'Inter', sans-serif;
+}
+.bello-ticket-head .no { color: var(--bello-orange); }
+.bello-ticket-body { padding: 18px; }
+.bello-ticket-body .req { font-size: 13px; color: rgba(10,22,40,0.6); margin-bottom: 2px; }
+.bello-ticket-body .req-text {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--bello-navy);
+}
+.bello-ticket-body .time { font-size: 12px; color: rgba(10,22,40,0.6); margin-top: 2px; }
+.bello-ticket-match {
+  margin-top: 14px;
+  border-top: 1px dashed rgba(10,22,40,0.12);
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.bello-ticket-match .who b {
+  font-family: 'Sora', sans-serif;
+  color: var(--bello-navy);
+  font-size: 16px;
+  display: block;
+}
+.bello-ticket-match .who span { font-size: 13px; color: rgba(10,22,40,0.6); }
+.bello-stamp {
+  flex-shrink: 0;
+  background: var(--bello-orange);
+  color: #FFFFFF;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transform: rotate(-3deg);
+}
+.bello-ticket-foot {
+  padding: 10px 16px;
+  border-top: 1px solid rgba(10,22,40,0.12);
+  font-size: 12px;
+  color: rgba(10,22,40,0.6);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* How-it-works steps */
+.bello-steps { border-top: 2px solid var(--bello-navy); }
+.bello-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 14px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(10,22,40,0.12);
+}
+.bello-step .n {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--bello-orange);
+}
+.bello-step b {
+  font-family: 'Sora', sans-serif;
+  color: var(--bello-navy);
+  font-size: 17px;
+  display: block;
+  margin-bottom: 4px;
+}
+.bello-step p { font-size: 15px; color: rgba(10,22,40,0.8); max-width: 52ch; }
+
+/* Promise checklist */
+ul.bello-promise { list-style: none; margin: 6px 0 0; padding: 0; max-width: 640px; }
+ul.bello-promise li {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(10,22,40,0.12);
+  font-size: 16px;
+  align-items: flex-start;
+}
+ul.bello-promise .tick {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bello-navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  font-weight: 700;
+  font-size: 14px;
+}
+ul.bello-promise b { color: var(--bello-navy); }
+
+/* Navy pro band */
+.bello-band {
+  background: var(--bello-navy);
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 36px 28px;
+}
+.bello-band h2 { color: #FFFFFF; }
+.bello-band p { color: rgba(255,255,255,0.7); }
+@media (min-width: 760px) {
+  .bello-band { padding: 48px; }
+}
